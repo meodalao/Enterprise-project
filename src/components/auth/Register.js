@@ -48,7 +48,7 @@ const Register = () => {
         </div>
         <div className="container Auth">
         <Card className="card-style">
-          <CardHeader>Welcome To SeamFlow</CardHeader>
+          <CardHeader>Welcome To Teddit</CardHeader>
           <CardBody>
           <form onSubmit={submitUser}>
           <FormGroup>

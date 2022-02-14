@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { NavLink, Link } from 'react-router-dom';
 import { useSelector, useDispatch } from "react-redux";
-
+import logo from  "../Assets/UoG_BLACK.jpg";
 import { SignOut } from '../store/modules/auth/actions/authAction';
 import Default from '../Assets/default.png'
 import './Navigation.css'
@@ -89,9 +89,9 @@ const Navigation = () => {
 
   return (
     <div className="mb-3">
-    <div style={{"textAlign": "center"}}> Developed with <span role="img"> ❤️ </span> by <a className="link-style"  href="https://twitter.com/stevensunflash" target="_blank">@stevensunflash</a></div>
+    <div style={{"textAlign": "center"}}> Developed with <span role="img"> ❤️ </span> by <a className="link-style"  href="https://www.facebook.com/ChocolateBacHa" target="_blank">@meodalao</a></div>
       <Navbar color="light" light expand="md"> 
-        <NavbarBrand className="mx-auto" href="/"><span style={{ fontWeight: "bold"}}>SeamFlow</span></NavbarBrand>
+        <NavbarBrand className="mx-auto" href="/"><img src={logo} width="260" height="30%"/></NavbarBrand>
         
         <NavbarToggler onClick={() => setIsOpen(!isOpen) } /> 
         <Collapse isOpen={isOpen} navbar> 
