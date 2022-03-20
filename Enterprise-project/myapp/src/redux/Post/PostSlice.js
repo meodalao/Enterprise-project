@@ -30,7 +30,7 @@ export const ProductSlice = createSlice({
     );
 
     builder.addCase(
-      ProductAsyncAction.searchProducts.pending,
+      ProductAsyncAction.searchPosts.pending,
       // @ts-ignore
       (state, { payload }) => {
         // @ts-ignore
@@ -38,7 +38,7 @@ export const ProductSlice = createSlice({
       }
     );
     builder.addCase(
-      ProductAsyncAction.searchProducts.rejected,
+      ProductAsyncAction.searchPosts.rejected,
       // @ts-ignore
       (state, { payload }) => {
         // @ts-ignore
@@ -46,7 +46,7 @@ export const ProductSlice = createSlice({
       }
     );
     builder.addCase(
-      ProductAsyncAction.searchProducts.fulfilled,
+      ProductAsyncAction.searchPosts.fulfilled,
       (state, { payload }) => {
         state.data = payload;
         // @ts-ignore

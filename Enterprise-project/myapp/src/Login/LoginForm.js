@@ -1,6 +1,48 @@
-import { Form, Input, Button, Checkbox } from "antd";
+import { Form, Input, Button, Checkbox, Select } from "antd";
 import "antd/dist/antd.css";
+import { useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
 // import { UserOutlined, LockOutlined } from '@ant-design/icons';
+// import { Select } from "antd";
+import { SignIn } from '../../store/modules/auth/actions/authAction';
+
+const Login = () => {
+
+    const currentState = useSelector((state) => state.Auth);
+  
+    const [user, setUser] = useState({
+      email: '',
+      password: ''
+    });
+    const dispatch = useDispatch()
+  
+    const userLogin = (credentials) => dispatch(SignIn(credentials))
+  
+  
+    const handleChange = e => {
+      setUser({
+        ...user,
+        [e.target.name]: e.target.value
+      })
+    }
+    const submitUser = (e) => {
+      e.preventDefault()
+      userLogin({
+        email: user.email,
+        password: user.password
+      });
+    }
+  
+    if(currentState.isAuthenticated){
+      return <Redirect to='/' />
+    }
+}
+
+const { Option } = Select;
+
+function handleChange(value) {
+  console.log(`selected ${value}`);
+}
 
 const NormalLoginForm = () => {
   const [form] = Form.useForm();
@@ -111,6 +153,26 @@ const NormalLoginForm = () => {
         <Input />
       </Form.Item>
 
+      <Select
+        {...tailFormItemLayout}
+        defaultValue="Role"
+        style={{ width: 120 }}
+        onChange={handleChange}
+      >
+        <Option value="Admin">Admin</Option>
+        <Option value="Staff">Staff</Option>
+      </Select>
+
+      <Select
+        {...tailFormItemLayout}
+        defaultValue="Department"
+        style={{ width: 120 }}
+        onChange={handleChange}
+      >
+        <Option value="IT">IT</Option>
+        <Option value="Business">Business</Option>
+      </Select>
+
       <Form.Item
         name="agreement"
         valuePropName="checked"
@@ -125,7 +187,7 @@ const NormalLoginForm = () => {
         {...tailFormItemLayout}
       >
         <Checkbox>
-          REMEMBER ME<a href="">   FORGOT PASSWORDS</a>
+          REMEMBER ME<a href=""> FORGOT PASSWORDS</a>
         </Checkbox>
       </Form.Item>
       <Form.Item {...tailFormItemLayout}>

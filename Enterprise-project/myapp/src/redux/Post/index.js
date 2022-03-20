@@ -1,7 +1,7 @@
 import { PostAsyncAction } from "./PosttAsyncAction";
 import { PostSlice } from "./PostSlice";
 
-const Products = {
+const Posts = {
   reducer: PostSlice.reducer,
   actions: {
     ...PostSlice.actions,
@@ -9,4 +9,4 @@ const Products = {
   },
 };
 
-export {Products} ;
+export { Posts };

@@ -6,6 +6,7 @@ const store = configureStore({
   reducer: {
     products: Posts.reducer,
     // categories: Categories.reducer
+    
   },
 });
 

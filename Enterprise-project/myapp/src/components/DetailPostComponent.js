@@ -1,4 +1,4 @@
-import { List, Avatar, Tooltip, Comment,Button } from "antd";
+import { List, Avatar, Tooltip, Comment, Button } from "antd";
 import React, { createElement, useState } from "react";
 import {
   LikeOutlined,
@@ -21,6 +21,7 @@ const PostList = () => {
       href: "#",
       title: `Top stupid Ideas ${i}`,
       avatar: "https://joeschmoe.io/api/v1/random",
+      category: "Random",
       description:
         "Mot y tuong qua tuyet voi.Mot y tuong qua tuyet voi.Mot y tuong qua tuyet voi.Mot y tuong qua tuyet voi.",
       content:
@@ -59,9 +60,12 @@ const PostList = () => {
         <span className="comment-action">{dislikes}</span>
       </span>
     </Tooltip>,
-      // <Button href="" onClick={(Demo)} alert=":"THIS FEATURE COMING SOON" >
-        <Button key="comment-basic-reply-to" onClick={() => alert("THIS FEATURE COMING SOON")}>
-    <span key="comment-basic-reply-to" >COMMENT</span>,
+    // <Button href="" onClick={(Demo)} alert=":"THIS FEATURE COMING SOON" >
+    <Button
+      key="comment-basic-reply-to"
+      onClick={() => alert("THIS FEATURE COMING SOON")}
+    >
+      <span key="comment-basic-reply-to">COMMENT</span>,
     </Button>,
   ];
 
@@ -99,6 +103,7 @@ const PostList = () => {
           <List.Item.Meta
             avatar={<Avatar src={item.avatar} />}
             title={<a href={item.href}>{item.title}</a>}
+            categories={item.category}
             description={item.description}
           />
           {item.content}

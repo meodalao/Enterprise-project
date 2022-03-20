@@ -5,13 +5,6 @@ import { Form, Input, Checkbox, Button } from "antd";
 
 const CreatePostForm = () => {
   const [form] = Form.useForm();
-  // const [checkNick, setCheckNick] = useState(false);
-
-  // useEffect(() => {
-  //   form.validateFields(['nickname']);
-  // }, [checkNick]);
-
-  //
 
   const tailFormItemLayout = {
     wrapperCol: {
@@ -35,7 +28,7 @@ const CreatePostForm = () => {
     <Form form={form} name="dynamic_rule">
       <Form.Item
         {...formItemLayout}
-        name="username"
+        name="TITLE"
         label="TITLE"
         rules={[
           {
@@ -49,7 +42,7 @@ const CreatePostForm = () => {
 
       <Form.Item
         {...formItemLayout}
-        name="username"
+        name="DESCRIPTION"
         label="DESCRIPTION"
         rules={[
           {
@@ -62,8 +55,8 @@ const CreatePostForm = () => {
       </Form.Item>
 
       <Form.Item
-        name="intro"
-        label="Content"
+        name="CONTENT"
+        label="CONTENT"
         rules={[
           {
             required: true,
@@ -92,7 +85,7 @@ const CreatePostForm = () => {
         </Checkbox>
       </Form.Item>
       <Form.Item {...tailFormItemLayout}>
-        <Button type="primary" htmlType="submit">
+        <Button type="primary" htmlType="submit" href="/" onclick="">
           Submit
         </Button>
       </Form.Item>

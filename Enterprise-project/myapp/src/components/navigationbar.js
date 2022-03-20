@@ -1,4 +1,4 @@
-import { Button, Col, Input, Layout, Row } from "antd";
+import { Button, Col, Layout, Row, Input } from "antd";
 import React from "react";
 // import { useDispatch, useSelector } from "react-redux";
 import logo from "../Assets/img/logo.png";
@@ -6,29 +6,28 @@ import logo from "../Assets/img/logo.png";
 // import { Posts } from "../redux/Post/index";
 
 const { Search } = Input;
+// const { Option } = Select;
 const { Header } = Layout;
 
 const NavbarComponent = () => {
-//   const { data } = useSelector((state) => state.posts);
-//   const [dataSearch, setDataSearch] = useState("");
-//   const dispatch = useDispatch();
-//   const search = (dataSearch) => {
-//     dispatch(Posts.actions.searchPosts({ dataSearch }));
-//   };
+  //   const { data } = useSelector((state) => state.posts);
+  //   const [dataSearch, setDataSearch] = useState("");
+  //   const dispatch = useDispatch();
+  //   const search = (dataSearch) => {
+  //     dispatch(Posts.actions.searchPosts({ dataSearch }));
+  //   };
 
-// const fromStoredData = (storageData) => JSON.parse(storageData);
-// const cart = fromStoredData(localStorage.getItem("cart")) || [];
-
+  // const fromStoredData = (storageData) => JSON.parse(storageData);
+  // const cart = fromStoredData(localStorage.getItem("cart")) || [];
 
   return (
-    <Layout >
+    <Layout>
       <Header
         className="header"
         style={{ height: "30%", backgroundColor: "#ececec", padding: "0px" }}
       >
-        <Row
-          className="" align="middle" justify="space-between" >
-          <Col 
+        <Row className="" align="middle" justify="space-between">
+          <Col
             // span={6}
             xs={24}
             sm={16}
@@ -42,18 +41,22 @@ const NavbarComponent = () => {
             }}
           >
             {/* <Link to="/"> */}
-              <img src={logo} width="200" height="50%"  alt=""/>
+            <img src={logo} width="200" height="50%" alt="" />
             {/* </Link> */}
           </Col>
           <Button
-              type="primary"
-              style={{  width: 80,
+            type="primary"
+            style={{
+              width: 80,
               display: "flex",
               justifyContent: "center",
-              alignItems: "center", }}
-              // href="/login"
-            >Create Post</Button>
-          <Col 
+              alignItems: "center",
+            }}
+            // href="/login"
+          >
+            Create Post
+          </Button>
+          <Col
             // span={6}
             xs={18}
             md={12}
@@ -71,6 +74,27 @@ const NavbarComponent = () => {
               size="large"
               // onSearch={(value) => search(value)}
             />
+            {/* <Select
+              showSearch
+              style={{ width: 200 }}
+              placeholder="Search to Select"
+              optionFilterProp="children"
+              filterOption={(input, option) =>
+                option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
+              }
+              filterSort={(optionA, optionB) =>
+                optionA.children
+                  .toLowerCase()
+                  .localeCompare(optionB.children.toLowerCase())
+              }
+            >
+              <Option value="1">Top Comments</Option>
+              <Option value="2">Top Ideas</Option>
+              <Option value="3">Top Liked and View</Option>
+              <Option value="4">Top of Top</Option>
+              <Option value="5">Lmao</Option>
+              <Option value="6"></Option>
+            </Select> */}
           </Col>
           <Col
             // span={6}
@@ -87,12 +111,16 @@ const NavbarComponent = () => {
             <Button
               // shape="circle"
               type="primary"
-              style={{  width: 80,
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center", }}
+              style={{
+                width: 80,
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+              }}
               // href="/login"
-            >Login</Button>
+            >
+              Login
+            </Button>
             {/* </Badge> */}
           </Col>
         </Row>
