@@ -43,14 +43,14 @@ const Demo = () => {
       </span>
     </Tooltip>,
     <Button key="comment-basic-reply-to" onClick={() => alert("reply to")}>
-      <span key="comment-basic-reply-to">Reply to</span>,
+      <span key="comment-basic-reply-to">Reply to</span>
     </Button>,
   ];
 
   return (
     <Comment
       actions={actions}
-      author={<a>COMMENT DAO</a>}
+      author={<a>TOP COMMENT </a>}
       avatar={<Avatar src={avatarlogo} alt="avatar" />}
       content={
         <p>

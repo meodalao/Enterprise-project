@@ -1,33 +1,28 @@
 import React from "react";
-// import { useRouter } from 'next/router';
-// import routes from './routes.js';
+import routes from './router';
+import { useRoutes } from 'react-router-dom'
 import "./App.css";
-// import Content from "./components/Content";
+import Content from "./components/Content";
 import NavbarComponent from "./components/navigationbar";
 import Footer from "./components/Footer";
 import NormalLoginForm from "./components/LoginForm";
-import RecentPost from "./components/RecentPost";
-import PostList from "./components/DetailPostComponent";
+// import RecentPost from "./components/RecentPost";
+import PostList from "./components/PostComponent";
 import Demo from "./components/comment";
 import CreatePostform from "./components/CreatePost";
 
 function App() {
-  // const routers = useRouter([routes]);
+  let routers = useRoutes([routes]);
   return (
     <>
       <div className="App" style={{ backgroundColor: "#ececec" }}>
         <NavbarComponent />
-        <br></br>
-        <br></br>
         <PostList />
-        {/* <RecentPost/> */}
-        <Demo/>
+        <Demo />
         <CreatePostform/>
         <NormalLoginForm/>
-        {/* <Content>{routers}</Content>   */}
-        {/* <BackTop/> */}
-        <br></br>
-        <br></br>
+        {/* <RecentPost/> */}
+        <Content>{routers}</Content>  
         <Footer />
       </div>
     </>
@@ -35,3 +30,5 @@ function App() {
 }
 
 export default App;
+
+

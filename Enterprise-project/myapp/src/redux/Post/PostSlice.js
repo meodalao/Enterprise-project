@@ -3,6 +3,7 @@ import { ProductAsyncAction } from "./ProductAsyncAction";
 
 const INITIAL_STATE = {
   data: [],
+  loading: false,
 };
 // @ts-ignore
 export const ProductSlice = createSlice({

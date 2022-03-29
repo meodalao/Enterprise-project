@@ -1,15 +1,16 @@
 import { Button, Col, Layout, Row, Input } from "antd";
 import React from "react";
+import "antd/dist/antd.css";
+// import { useGoogleAuth } from "./googleAuth";
 // import { useDispatch, useSelector } from "react-redux";
 import logo from "../Assets/img/logo.png";
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 // import { Posts } from "../redux/Post/index";
-
 const { Search } = Input;
-// const { Option } = Select;
 const { Header } = Layout;
 
 const NavbarComponent = () => {
+  // const { signIn } = useGoogleAuth();
   //   const { data } = useSelector((state) => state.posts);
   //   const [dataSearch, setDataSearch] = useState("");
   //   const dispatch = useDispatch();
@@ -24,7 +25,7 @@ const NavbarComponent = () => {
     <Layout>
       <Header
         className="header"
-        style={{ height: "30%", backgroundColor: "#ececec", padding: "0px" }}
+        style={{ height: "40%", backgroundColor: "#f6ffed", padding: "0px" }}
       >
         <Row className="" align="middle" justify="space-between">
           <Col
@@ -40,19 +41,20 @@ const NavbarComponent = () => {
               alignItems: "center",
             }}
           >
-            {/* <Link to="/"> */}
-            <img src={logo} width="200" height="50%" alt="" />
-            {/* </Link> */}
+            <Link to="localhost:3000/">
+            <img src={logo} width="200" height="80%" alt="" />
+            </Link>
           </Col>
           <Button
-            type="primary"
+            shape="round"
+            type="link"
             style={{
               width: 80,
               display: "flex",
               justifyContent: "center",
               alignItems: "center",
             }}
-            // href="/login"
+            href="localhost:3000/create-post"
           >
             Create Post
           </Button>
@@ -74,27 +76,6 @@ const NavbarComponent = () => {
               size="large"
               // onSearch={(value) => search(value)}
             />
-            {/* <Select
-              showSearch
-              style={{ width: 200 }}
-              placeholder="Search to Select"
-              optionFilterProp="children"
-              filterOption={(input, option) =>
-                option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
-              }
-              filterSort={(optionA, optionB) =>
-                optionA.children
-                  .toLowerCase()
-                  .localeCompare(optionB.children.toLowerCase())
-              }
-            >
-              <Option value="1">Top Comments</Option>
-              <Option value="2">Top Ideas</Option>
-              <Option value="3">Top Liked and View</Option>
-              <Option value="4">Top of Top</Option>
-              <Option value="5">Lmao</Option>
-              <Option value="6"></Option>
-            </Select> */}
           </Col>
           <Col
             // span={6}
@@ -107,9 +88,21 @@ const NavbarComponent = () => {
               alignItems: "center",
             }}
           >
-            {/* <Badge count={cart.length}> */}
             <Button
-              // shape="circle"
+              shape="round"
+              type="link"
+              style={{
+                width: 80,
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+              }}
+              href="localhost:3000/login"
+            >
+              Login
+            </Button>
+            <Button
+              shape="round"
               type="primary"
               style={{
                 width: 80,
@@ -117,11 +110,10 @@ const NavbarComponent = () => {
                 justifyContent: "center",
                 alignItems: "center",
               }}
-              // href="/login"
+
             >
-              Login
+              Google Login
             </Button>
-            {/* </Badge> */}
           </Col>
         </Row>
       </Header>

@@ -7,7 +7,7 @@ const FooterComponent = () => {
   return (
     <Footer>
       <Col href="#" onClick={info} align="middle" justify="space-between">
-        Made With Passion ♥
+        Made with Love ♥
       </Col>
     </Footer>
   );

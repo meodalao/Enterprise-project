@@ -1,0 +1,16 @@
+{
+	"folders": [
+		{
+			"path": "..\\..\\..\\.."
+		},
+		{
+			"path": "..\\..\\..\\..\\..\\..\\enterprise\\st-shooting-project-3"
+		},
+		{
+			"path": "..\\..\\..\\..\\..\\..\\enterprise\\Forum-App-React-Frontend"
+		}
+	],
+	"settings": {
+		"git.ignoreLimitWarning": true
+	}
+}

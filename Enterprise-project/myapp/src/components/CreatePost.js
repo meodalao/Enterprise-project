@@ -1,11 +1,30 @@
 import React from "react";
+import "antd/dist/antd.css";
 // , { useState, useEffect }
-import { Form, Input, Checkbox, Button } from "antd";
-// const { Option } = Select;
+import {
+  Form,
+  Input,
+  Checkbox,
+  Button,
+  Upload,
+} from "antd";
+import 
+{InboxOutlined}
+from '@ant-design/icons';
 
-const CreatePostForm = () => {
-  const [form] = Form.useForm();
 
+  const normFile = (e) => {
+    console.log('Upload event:', e);
+  
+    if (Array.isArray(e)) {
+      return e;
+    }
+  
+    return e && e.fileList;
+  };
+
+  const CreatePostForm = () => {
+    const [form] = Form.useForm();
   const tailFormItemLayout = {
     wrapperCol: {
       xs: {
@@ -66,7 +85,6 @@ const CreatePostForm = () => {
       >
         <Input.TextArea showCount maxLength={100} />
       </Form.Item>
-
       <Form.Item
         name="agreement"
         valuePropName="checked"
@@ -81,13 +99,27 @@ const CreatePostForm = () => {
         {...tailFormItemLayout}
       >
         <Checkbox>
-          I have read and agree the <a href="#">Term & Condition</a>
+          By clicking the button below you acknowledge that you have read and
+          agreed to our <a href="#">provacy privacy & term </a> and want to post
+          your ideas
+          {/* <a href="#">Term & Condition</a> */}
         </Checkbox>
       </Form.Item>
       <Form.Item {...tailFormItemLayout}>
         <Button type="primary" htmlType="submit" href="/" onclick="">
           Submit
         </Button>
+      </Form.Item>
+      <Form.Item label="Dragger">
+        <Form.Item name="dragger" valuePropName="fileList" getValueFromEvent={normFile} noStyle>
+          <Upload.Dragger name="files" action="/upload.do">
+            <p className="ant-upload-drag-icon">
+              <InboxOutlined />
+            </p>
+            <p className="ant-upload-text">Click or drag file to this area to upload</p>
+            <p className="ant-upload-hint">Support for a single or bulk upload.</p>
+          </Upload.Dragger>
+        </Form.Item>
       </Form.Item>
     </Form>
   );
