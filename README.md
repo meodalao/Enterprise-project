@@ -1,12 +1,4 @@
-# Enterprise-project
 
-npm create-react-app myapp
-
-npm install antd
-
-npm create react-app react-auth-with-google
-
-npm add react-router-dom react-use-googlelogin
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
