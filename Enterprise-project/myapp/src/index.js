@@ -3,17 +3,19 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import { BrowserRouter as Router } from "react-router-dom";
 import App from "./App";
+// import { Provider } from "react-redux";
+// import store from "./redux/store"
 import reportWebVitals from "./reportWebVitals";
+import 'antd/dist/antd.css'
 // import { GoogleAuthProvider } from "./components/googleAuth";
 
 ReactDOM.render(
   <React.StrictMode>
+    {/* <Provider store={store}> */}
     <Router>
-    {/* <GoogleAuthProvider> */}
       <App />
-    {/* </GoogleAuthProvider> */}
     </Router>
-    ,
+    {/* </Provider> */}
   </React.StrictMode>,
   document.getElementById("root")
 );
